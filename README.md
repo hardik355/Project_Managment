@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+rm fieldset.inputs {
+    /* background: #f4f4f4; */
+    /* border-radius: 4px; */
+    /* box-shadow: inset 0 1px 4px #ddd;
