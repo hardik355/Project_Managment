@@ -1,0 +1,21 @@
+<h1> List of Products </h1>
+<%= link_to 'Add Product', new_product_path %>
+
+<table>
+    <tr>
+        <th>Project Name </th>
+    </tr>
+
+    <% @projects.each do |p| %>
+    <tr>
+        <td><%= p.p_name %></td>
+        <td><%= link_to 'Show', projects_path(p)%></td>
+        <td><%= link_to 'edit', edit_projects_path(p)%></td>
+        <td><%= link_to 'destroy', projects_path(p),
+                                    method: :"delete",
+                                    data: {confirm: "Are you Sure"} %></td>
+    </tr>
+    <%end%>
+
+
+</table>
