@@ -16,7 +16,7 @@
  @import "bootstrap";
 
 /* Login and sign up page */
- body {  background: #b1c6ff;}
+
  form input[type=text], form input[type=password], form input[type=email], form input[type=number], form input[type=url], form input[type=tel], form input[type=date], form input[type=time], form textarea { width: 100%; } 
 
 .formBox {
@@ -37,7 +37,33 @@
 
 .formBox a { color: #000; text-decoration: none; }
 
-/* Dropdown in nav bar*/
-li.nav-item.dropdown {
-  margin-left: 1180px;
+.navbar-nav {
+  width: 100%;
+  display: inline-block;
+}
+ul.navbar-nav > li {
+  float: left;
+}
+.navbar {
+  background: #33b5e5;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar-nav .dropdown-menu {
+  right: 0;
+  left: inherit;
+  border-radius: 0;
+}
+
+.navbar-nav .dropdown-menu a {
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.navbar-nav .dropdown-menu {
+  background: #3ecbff;
+  border: none;
 }
