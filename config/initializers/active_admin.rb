@@ -18,6 +18,9 @@ ActiveAdmin.setup do |config|
   #
   # config.site_title_image = "logo.png"
 
+
+
+
   # == Default Namespace
   #
   # Set the default namespace each administration resource
@@ -46,6 +49,10 @@ ActiveAdmin.setup do |config|
   # This will ONLY change the title for the admin section. Other
   # namespaces will continue to use the main "site_title" configuration.
 
+
+
+
+
   # == User Authentication
   #
   # Active Admin will automatically call an authentication
@@ -55,6 +62,9 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # within the application controller.
   config.authentication_method = :authenticate_admin_user!
+
+
+
 
   # == User Authorization
   #
@@ -84,6 +94,9 @@ ActiveAdmin.setup do |config|
   # Method provided here should be defined in application_controller.rb.
   # config.on_unauthorized_access = :access_denied
 
+
+
+
   # == Current User
   #
   # Active Admin will associate actions with the current
@@ -92,6 +105,9 @@ ActiveAdmin.setup do |config|
   # This setting changes the method which Active Admin calls
   # (within the application controller) to return the currently logged in user.
   config.current_user_method = :current_admin_user
+
+
+
 
   # == Logging Out
   #
@@ -111,20 +127,26 @@ ActiveAdmin.setup do |config|
   # Default:
   # config.logout_link_method = :get
 
+
+
+
   # == Root
   #
   # Set the action to call for the root path. You can set different
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+   config.root_to = 'dashboard#index'
+
+
+
 
   # == Admin Comments
   #
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+  config.comments = false
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
@@ -134,10 +156,19 @@ ActiveAdmin.setup do |config|
   # config.comments_order = 'created_at ASC'
   #
   # You can disable the menu item for the comments index page:
-  # config.comments_menu = false
+  #  config.comments_menu = false
   #
   # You can customize the comment menu:
-  # config.comments_menu = { parent: 'Admin', priority: 1 }
+  config.comments_menu = { parent: 'Admin', priority: 1 }
+
+
+
+
+
+
+
+
+
 
   # == Batch Actions
   #

@@ -2,7 +2,7 @@ ActiveAdmin.register Project do
   permit_params :p_name
   
   index do
-    column :p_name
+    column "Project_Name", :p_name
     actions
   end
 
