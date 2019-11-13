@@ -1,4 +1,7 @@
 class BlogsController < ApplicationController
-  def index
-  end
+    def index
+    #   @projects = Projects.all
+    #   p @projects
+    #   p 1111111111111111111111111
+    end
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resource :projects
+
   #admin route
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -16,4 +18,5 @@ Rails.application.routes.draw do
       root to: "devise/sessions#new"
     end
   end
+
 end

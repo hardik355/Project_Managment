@@ -15,11 +15,9 @@
  */
  @import "bootstrap";
 
-
+/* Login and sign up page */
  body {  background: #b1c6ff;}
  form input[type=text], form input[type=password], form input[type=email], form input[type=number], form input[type=url], form input[type=tel], form input[type=date], form input[type=time], form textarea { width: 100%; } 
-
-
 
 .formBox {
   width: 500px;
@@ -30,7 +28,6 @@
   border-radius: 8px;
 }
 
-
 .formBox form input[type=submit] {
   margin-right: 0;
   background: #000;
@@ -38,6 +35,10 @@
   border-radius: 8px
 }
 
-
-
 .formBox a { color: #000; text-decoration: none; }
+
+/* Dropdown in nav bar*/
+li.nav-item.dropdown {
+  margin-left: 1180px;
+  marker: none;
+}
