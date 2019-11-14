@@ -1,0 +1,18 @@
+<H1> Task List </h1>
+
+<table>
+<tr>    
+  <th>Task List</th>
+  <th>Edit</th>
+  <th>Show</th>
+  <th>Destroy</th>
+</tr>
+  <% @tasks.each do |p|%>
+    <tr>
+      <td><%= link_to p.t_name %></td>
+      <td><%= link_to 'edit', edit_task_path(p) %></td>
+      <td><%= link_to 'show', task_path(p)%></td>
+      <td><%= link_to 'destroy', edit_task_path(p)%></td>
+    </tr>
+    <%end%>
+</table>
