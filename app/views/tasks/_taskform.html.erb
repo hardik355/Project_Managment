@@ -6,6 +6,16 @@
         <%= form.text_field :t_name %>
     </p>
     <p>
+        <%= form.label :Description %><br>
+        <%= form.text_field :description %>
+    </p>
+    <p>
+        <%= form.label :Project_name %><br>
+        <%= form.select :project_id, collection: Project.pluck(:p_name, :id) %>
+    </p>
+    </p>
         <%= form.submit %>
     </p>
 <% end %>
+
+
