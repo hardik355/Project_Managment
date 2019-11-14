@@ -1,0 +1,11 @@
+<h1> Enter Detail</h1>
+
+<%= form_for @project, method: :post, remote: true do |form| %>
+    <p>
+        <%= form.label :project_name %><br>
+        <%= form.text_field :p_name %>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>

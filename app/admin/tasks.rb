@@ -1,12 +1,13 @@
 ActiveAdmin.register Task do
-  permit_params :t_name, :p_name, :project_id, :project
+  permit_params :t_name, :p_name, :project_id, :project, :description
   
   # Index form
   index do
-    column "Task_Name", :t_name
     column "Project", :project_id do |task|
       task.project.p_name
     end
+    column "Task_Name", :t_name
+    column "Description", :description
     actions
   end
 
@@ -16,6 +17,7 @@ ActiveAdmin.register Task do
     f.inputs do
       f.input :project_id, as: :select, collection: Project.pluck(:p_name, :id)
     end
+    f.input :description
     f.actions
   end
 
@@ -26,6 +28,7 @@ ActiveAdmin.register Task do
       row "Project", :project_id do |task|
         task.project.p_name
       end
+      row :description
     end
   end
 

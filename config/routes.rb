@@ -10,10 +10,16 @@ Rails.application.routes.draw do
   #Devise set root page for localhost:3000
   devise_scope :user do 
     authenticated :user do 
-      root to: "blogs#index"
+      root to: "projects#index"
     end
     unauthenticated :user do
       root to: "devise/sessions#new"
     end
   end
+
+  #project Routes 
+  resources :projects
+
+  # Task Custom Route 
+  resources :tasks
 end
