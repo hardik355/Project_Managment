@@ -8,9 +8,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @product = Project.new(project_params)
+    @project = Project.new(project_params)
     @project.save
-    redirect_to @projects_path
+    redirect_to @project
   end
 
   def edit
