@@ -1,8 +1,11 @@
 class TasksController < ApplicationController
+
+  # before_action :all_tasks, only: [:index, :create]
   def index
-    @tasks = Task.all
+    # @tasks = Task.all
+    project = Project.find_by(id: params[:project_id])
+    @tasks = project.tasks
     respond_to do |format|
-      format.html
       format.js
     end
   end

@@ -1,4 +1,8 @@
 class ProjectsController < ApplicationController
+
+  # before_action :all_tasks, only: [:index, :create]
+  respond_to :html, :js
+  
   def index
     @projects = Project.all
   end
