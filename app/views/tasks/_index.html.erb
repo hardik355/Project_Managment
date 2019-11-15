@@ -1,5 +1,11 @@
-<% @tasks.each do|task| %>
+<table>
   <tr>
-    <td><%= task.t_name %></td>
-  </tr>  
-<% end %>
+    <td> Task Name</td>
+  </tr> 
+  <div id="task">
+    <%= link_to 'New Task', new_task_path, remote: true %>
+  </div>
+  <tbody id="taskBody">
+    <%= render 'task_body' %>
+  </tbody>
+</table>

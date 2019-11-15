@@ -1,6 +1,6 @@
 <h1> Enter Detail</h1>
 
-<%= form_for @task, method: :post do |form| %>
+<%= form_for @task, method: :post, remote: true do |form| %>
     <p>
         <%= form.label :Task_name %><br>
         <%= form.text_field :t_name %>

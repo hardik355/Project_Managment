@@ -1,13 +1,9 @@
 class TasksController < ApplicationController
 
-  # before_action :all_tasks, only: [:index, :create]
   def index
     # @tasks = Task.all
     project = Project.find_by(id: params[:project_id])
     @tasks = project.tasks
-    respond_to do |format|
-      format.js
-    end
   end
 
   def new
@@ -17,7 +13,7 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.save
-    redirect_to tasks_path
+    @tasks = Project.find_by(id: task_params[:project_id]).tasks
   end
 
   def edit
