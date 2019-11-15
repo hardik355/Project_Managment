@@ -1,29 +1,19 @@
-<div class="sidebar-container">
-  <div class="sidebar-logo">
-    Project Listing
-  </div>
-  <ul class="sidebar-navigation">
-    <li>
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">Start Bootstrap </div>
+    <div class="list-group list-group-flush">
       <% @projects.each do |p|%>
-        <li><%= link_to p.p_name, tasks_path(project_id: p.id), remote: true %></li>
+        <li class="list-group-item list-group-item-action bg-light">
+          <%= link_to p.p_name, tasks_path(project_id: p.id), remote: true %>
+        </li>
       <%end%>
-    </li>
-  </ul>
-</div>
-
-
-<div class="content-container">
-  <div class="container-fluid">
-    <div>
-      <h2> Task Listing </h2>
+    </div>
     </div>
     
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
+  <div class="container-fluid">
+    <h1 class="mt-4">Simple Sidebar</h1>
       <div id="taskList"></div>
     </div>
   </div>
 </div>
-
-
-

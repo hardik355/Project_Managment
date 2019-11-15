@@ -1,54 +1,50 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-<h1> Project Listing </h1><br ><br >
-
-<div class="sidebar-container">
-  <div class="sidebar-logo">
-    Project Listing
-  </div>
-  <ul class="sidebar-navigation">
-    <li>
-      <a href="#">
-        <i class="fa fa-home" aria-hidden="true"></i> Homepage
-      </a>
-    </li>
-  </ul>
-</div>
-
-<div class="content-container">
-  <div class="container-fluid">
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <h1>Navbar example</h1>
-      <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-      <p>To see the difference between static and fixed top navbars, just scroll.</p>
-      <p>
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-      </p>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign In</h3>
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="input-group form-group">
+          	<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter Email" %>
+          </div>
+            
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+          </div>
+              
+          <div class="row align-items-center remember">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+            
+          <div class="form-group">
+            <%= f.submit "Log in",class: "btn float-right login_btn" %>
+					</div>
+      <% end %>
+			</div>
+		    <div class="card-footer">
+				  <div class="d-flex justify-content-center links">
+					  Don't have an account?<a href="#">Sign Up</a>
+				  </div>
+				  <div class="d-flex justify-content-center">
+					  <a href="#">Forgot your password?</a>
+				  </div>
+			  </div>
+		  </div>
+ 
     </div>
   </div>
 </div>
@@ -58,17 +54,33 @@ Things you may want to cover:
 
 
 
-<div class="sidebar-container">
-  <div class="sidebar-logo">
-    <table>
-      <ul>
-          <li>Project Listing</li>
-      </ul>
-    </div>
-  <ul class="sidebar-navigation">
-  <% @projects.each do |p|%>
-      <li><%= p.p_name %></li>
-  <%end%>
-  </ul>
-</table>
-</div>
+      <h2>Sign up</h2>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div>
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div>
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password" %>
+            </div>
+
+            <div>
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </div>
+
+            <div>
+              <%= f.submit "Sign up" %>
+            </div>
+          <% end %><br>
+      <%= render "devise/shared/links" %>
+
+

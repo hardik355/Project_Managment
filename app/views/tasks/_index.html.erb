@@ -1,7 +1,13 @@
-<table>
-  <tr>
-    <td> Task Name</td>
-  </tr> 
+<table class="table">
+  <thead class="thead-light">
+    <tr class="table-danger">
+      <td> Task Name</td>
+      <td> Edit Task</td>
+      <td> Show Task</td>
+      <td> Delete Task</td>
+    </tr> 
+  </thead>
+
   <div id="task">
     <%= link_to 'New Task', new_task_path, remote: true %>
   </div>
